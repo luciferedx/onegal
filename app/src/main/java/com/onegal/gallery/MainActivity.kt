@@ -1,6 +1,7 @@
 package com.onegal.gallery
 
 import android.Manifest
+import android.app.Activit
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -168,7 +169,7 @@ private fun OnegalRootScreen(
     val intentSenderLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartIntentSenderForResult()
     ) { result ->
-        if (result.resultCode == ComponentActivity.RESULT_OK) {
+        if (result.resultCode == android.app.Activity.RESULT_OK) {
             pendingIntentSuccessMsg?.let { viewModel.showToast(it) }
             viewModel.refreshInternalMedia()
         }
